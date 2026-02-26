@@ -19,14 +19,12 @@ sealed class PPEftCancelRequestModel with _$PPEftCancelRequestModel {
     required String clientToken,
     required String transactionId,
     required double totalAmount,
-    PPDeviceTypeEnum deviceType = PPDeviceTypeEnum.POS,
   }) => PPEftCancelRequestModel(
     data: PPEftCancelRequestData(totalAmount: totalAmount),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_EFTPOS_CANCEL,
       clientToken: clientToken,
       transactionId: transactionId,
-      deviceType: deviceType,
     ),
   );
 }

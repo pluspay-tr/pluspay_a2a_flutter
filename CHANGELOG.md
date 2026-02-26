@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3] - 2026-02-26
+
+### Removed
+
+- **`PPDeviceTypeEnum`**: Removed enum entirely (`POS`, `KIOSK` values no longer exist)
+- **`PPGeneralRequestHeader`**: Removed `deviceType` field
+- Removed `deviceType` parameter from the following `toRequest` factory methods:
+  - `PPStartPaymentRequestModel.toRequest()`
+  - `PPCancelPaymentRequestModel.toRequest()`
+  - `PPEftPaymentRequestModel.toRequest()`
+  - `PPEftCancelRequestModel.toRequest()`
+  - `PPOrderPaymentRequestModel.toRequest()`
+
 ## [0.2.2] - 2026-02-17
 
 ### Added

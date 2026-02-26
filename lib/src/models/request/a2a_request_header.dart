@@ -9,7 +9,6 @@ sealed class PPGeneralRequestHeader with _$PPGeneralRequestHeader {
   const factory PPGeneralRequestHeader({
     required PPTransactionType transactionType,
     required String clientToken,
-    @Default(PPDeviceTypeEnum.POS) PPDeviceTypeEnum deviceType,
     String? orderCode,
     String? transactionId,
   }) = _PPGeneralRequestHeader;

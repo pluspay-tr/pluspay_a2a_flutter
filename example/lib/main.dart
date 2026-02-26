@@ -102,7 +102,6 @@ class _HomePageState extends State<HomePage> {
           paymentMethod: PPPaymentMethod.CC,
           transactionId: Uuid().v4(),
           taxRate: 0,
-          deviceType: PPDeviceTypeEnum.POS,
           clientToken: _clientToken,
         ),
       ),

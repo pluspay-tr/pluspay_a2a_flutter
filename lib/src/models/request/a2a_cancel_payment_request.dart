@@ -18,7 +18,6 @@ sealed class PPCancelPaymentRequestModel with _$PPCancelPaymentRequestModel {
     required String clientToken,
     required String transactionId,
     required String orderCode,
-    PPDeviceTypeEnum deviceType = PPDeviceTypeEnum.POS,
     String? note,
   }) => PPCancelPaymentRequestModel(
     data: PPCancelPaymentRequestData(transactionId: transactionId, note: note),
@@ -26,7 +25,6 @@ sealed class PPCancelPaymentRequestModel with _$PPCancelPaymentRequestModel {
       transactionType: PPTransactionType.POST_PAYMENT_CANCEL,
       clientToken: clientToken,
       orderCode: orderCode,
-      deviceType: deviceType,
     ),
   );
 }

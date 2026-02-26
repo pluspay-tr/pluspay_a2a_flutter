@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PPGeneralRequestHeader {
 
- PPTransactionType get transactionType; String get clientToken; PPDeviceTypeEnum get deviceType; String? get orderCode; String? get transactionId;
+ PPTransactionType get transactionType; String get clientToken; String? get orderCode; String? get transactionId;
 /// Create a copy of PPGeneralRequestHeader
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $PPGeneralRequestHeaderCopyWith<PPGeneralRequestHeader> get copyWith => _$PPGene
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPGeneralRequestHeader&&(identical(other.transactionType, transactionType) || other.transactionType == transactionType)&&(identical(other.clientToken, clientToken) || other.clientToken == clientToken)&&(identical(other.deviceType, deviceType) || other.deviceType == deviceType)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.transactionId, transactionId) || other.transactionId == transactionId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPGeneralRequestHeader&&(identical(other.transactionType, transactionType) || other.transactionType == transactionType)&&(identical(other.clientToken, clientToken) || other.clientToken == clientToken)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.transactionId, transactionId) || other.transactionId == transactionId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,transactionType,clientToken,deviceType,orderCode,transactionId);
+int get hashCode => Object.hash(runtimeType,transactionType,clientToken,orderCode,transactionId);
 
 @override
 String toString() {
-  return 'PPGeneralRequestHeader(transactionType: $transactionType, clientToken: $clientToken, deviceType: $deviceType, orderCode: $orderCode, transactionId: $transactionId)';
+  return 'PPGeneralRequestHeader(transactionType: $transactionType, clientToken: $clientToken, orderCode: $orderCode, transactionId: $transactionId)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $PPGeneralRequestHeaderCopyWith<$Res>  {
   factory $PPGeneralRequestHeaderCopyWith(PPGeneralRequestHeader value, $Res Function(PPGeneralRequestHeader) _then) = _$PPGeneralRequestHeaderCopyWithImpl;
 @useResult
 $Res call({
- PPTransactionType transactionType, String clientToken, PPDeviceTypeEnum deviceType, String? orderCode, String? transactionId
+ PPTransactionType transactionType, String clientToken, String? orderCode, String? transactionId
 });
 
 
@@ -65,12 +65,11 @@ class _$PPGeneralRequestHeaderCopyWithImpl<$Res>
 
 /// Create a copy of PPGeneralRequestHeader
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? transactionType = null,Object? clientToken = null,Object? deviceType = null,Object? orderCode = freezed,Object? transactionId = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? transactionType = null,Object? clientToken = null,Object? orderCode = freezed,Object? transactionId = freezed,}) {
   return _then(_self.copyWith(
 transactionType: null == transactionType ? _self.transactionType : transactionType // ignore: cast_nullable_to_non_nullable
 as PPTransactionType,clientToken: null == clientToken ? _self.clientToken : clientToken // ignore: cast_nullable_to_non_nullable
-as String,deviceType: null == deviceType ? _self.deviceType : deviceType // ignore: cast_nullable_to_non_nullable
-as PPDeviceTypeEnum,orderCode: freezed == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
+as String,orderCode: freezed == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
 as String?,transactionId: freezed == transactionId ? _self.transactionId : transactionId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -154,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PPTransactionType transactionType,  String clientToken,  PPDeviceTypeEnum deviceType,  String? orderCode,  String? transactionId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PPTransactionType transactionType,  String clientToken,  String? orderCode,  String? transactionId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PPGeneralRequestHeader() when $default != null:
-return $default(_that.transactionType,_that.clientToken,_that.deviceType,_that.orderCode,_that.transactionId);case _:
+return $default(_that.transactionType,_that.clientToken,_that.orderCode,_that.transactionId);case _:
   return orElse();
 
 }
@@ -175,10 +174,10 @@ return $default(_that.transactionType,_that.clientToken,_that.deviceType,_that.o
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PPTransactionType transactionType,  String clientToken,  PPDeviceTypeEnum deviceType,  String? orderCode,  String? transactionId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PPTransactionType transactionType,  String clientToken,  String? orderCode,  String? transactionId)  $default,) {final _that = this;
 switch (_that) {
 case _PPGeneralRequestHeader():
-return $default(_that.transactionType,_that.clientToken,_that.deviceType,_that.orderCode,_that.transactionId);}
+return $default(_that.transactionType,_that.clientToken,_that.orderCode,_that.transactionId);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -192,10 +191,10 @@ return $default(_that.transactionType,_that.clientToken,_that.deviceType,_that.o
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PPTransactionType transactionType,  String clientToken,  PPDeviceTypeEnum deviceType,  String? orderCode,  String? transactionId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PPTransactionType transactionType,  String clientToken,  String? orderCode,  String? transactionId)?  $default,) {final _that = this;
 switch (_that) {
 case _PPGeneralRequestHeader() when $default != null:
-return $default(_that.transactionType,_that.clientToken,_that.deviceType,_that.orderCode,_that.transactionId);case _:
+return $default(_that.transactionType,_that.clientToken,_that.orderCode,_that.transactionId);case _:
   return null;
 
 }
@@ -207,12 +206,11 @@ return $default(_that.transactionType,_that.clientToken,_that.deviceType,_that.o
 @JsonSerializable()
 
 class _PPGeneralRequestHeader implements PPGeneralRequestHeader {
-  const _PPGeneralRequestHeader({required this.transactionType, required this.clientToken, this.deviceType = PPDeviceTypeEnum.POS, this.orderCode, this.transactionId});
+  const _PPGeneralRequestHeader({required this.transactionType, required this.clientToken, this.orderCode, this.transactionId});
   factory _PPGeneralRequestHeader.fromJson(Map<String, dynamic> json) => _$PPGeneralRequestHeaderFromJson(json);
 
 @override final  PPTransactionType transactionType;
 @override final  String clientToken;
-@override@JsonKey() final  PPDeviceTypeEnum deviceType;
 @override final  String? orderCode;
 @override final  String? transactionId;
 
@@ -229,16 +227,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPGeneralRequestHeader&&(identical(other.transactionType, transactionType) || other.transactionType == transactionType)&&(identical(other.clientToken, clientToken) || other.clientToken == clientToken)&&(identical(other.deviceType, deviceType) || other.deviceType == deviceType)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.transactionId, transactionId) || other.transactionId == transactionId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPGeneralRequestHeader&&(identical(other.transactionType, transactionType) || other.transactionType == transactionType)&&(identical(other.clientToken, clientToken) || other.clientToken == clientToken)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.transactionId, transactionId) || other.transactionId == transactionId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,transactionType,clientToken,deviceType,orderCode,transactionId);
+int get hashCode => Object.hash(runtimeType,transactionType,clientToken,orderCode,transactionId);
 
 @override
 String toString() {
-  return 'PPGeneralRequestHeader(transactionType: $transactionType, clientToken: $clientToken, deviceType: $deviceType, orderCode: $orderCode, transactionId: $transactionId)';
+  return 'PPGeneralRequestHeader(transactionType: $transactionType, clientToken: $clientToken, orderCode: $orderCode, transactionId: $transactionId)';
 }
 
 
@@ -249,7 +247,7 @@ abstract mixin class _$PPGeneralRequestHeaderCopyWith<$Res> implements $PPGenera
   factory _$PPGeneralRequestHeaderCopyWith(_PPGeneralRequestHeader value, $Res Function(_PPGeneralRequestHeader) _then) = __$PPGeneralRequestHeaderCopyWithImpl;
 @override @useResult
 $Res call({
- PPTransactionType transactionType, String clientToken, PPDeviceTypeEnum deviceType, String? orderCode, String? transactionId
+ PPTransactionType transactionType, String clientToken, String? orderCode, String? transactionId
 });
 
 
@@ -266,12 +264,11 @@ class __$PPGeneralRequestHeaderCopyWithImpl<$Res>
 
 /// Create a copy of PPGeneralRequestHeader
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? transactionType = null,Object? clientToken = null,Object? deviceType = null,Object? orderCode = freezed,Object? transactionId = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? transactionType = null,Object? clientToken = null,Object? orderCode = freezed,Object? transactionId = freezed,}) {
   return _then(_PPGeneralRequestHeader(
 transactionType: null == transactionType ? _self.transactionType : transactionType // ignore: cast_nullable_to_non_nullable
 as PPTransactionType,clientToken: null == clientToken ? _self.clientToken : clientToken // ignore: cast_nullable_to_non_nullable
-as String,deviceType: null == deviceType ? _self.deviceType : deviceType // ignore: cast_nullable_to_non_nullable
-as PPDeviceTypeEnum,orderCode: freezed == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
+as String,orderCode: freezed == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
 as String?,transactionId: freezed == transactionId ? _self.transactionId : transactionId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));

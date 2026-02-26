@@ -28,7 +28,6 @@ sealed class PPStartPaymentRequestModel with _$PPStartPaymentRequestModel {
     PPPartialPaymentType? partialType,
     List<PPProduct> products = const [],
     PPBillingInfo? billingInformation,
-    PPDeviceTypeEnum deviceType = PPDeviceTypeEnum.POS,
   }) => PPStartPaymentRequestModel(
     data: PPStartPaymentRequestData(
       paymentType: paymentType,
@@ -44,7 +43,6 @@ sealed class PPStartPaymentRequestModel with _$PPStartPaymentRequestModel {
       transactionType: PPTransactionType.POST_PAYMENT_START,
       clientToken: clientToken,
       orderCode: orderCode,
-      deviceType: deviceType,
     ),
   );
 }

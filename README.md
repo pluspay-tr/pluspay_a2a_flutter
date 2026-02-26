@@ -15,7 +15,7 @@ dependencies:
   pluspay_a2a:
     git:
       url: https://github.com/plus-pay-tr/pluspay_a2a.git
-      ref: 0.2.2
+      ref: 0.2.3
 ```
 
 > **Not:** `ref` değeri olarak her zaman kullanmak istediğiniz versiyonun tag'ini belirtin (örn. `0.1.0`, `0.2.0`). Mevcut versiyonları görmek için [tags](https://github.com/plus-pay-tr/pluspay_a2a/tags) sayfasını ziyaret edin. Her zaman son versiyonu kullanmanızı öneririz.
@@ -82,7 +82,6 @@ PPStartPaymentRequestModel.toRequest(
   totalAmount: 100.0,
   paymentType: PPPaymentType.POS,
   paymentMethod: PPPaymentMethod.CC,
-  deviceType: PPDeviceTypeEnum.POS, // opsiyonel, varsayılan: POS
   installment: 3,               // opsiyonel
   isPartial: false,              // opsiyonel, varsayılan: false
   partialType: null,             // opsiyonel
@@ -98,7 +97,6 @@ PPCancelPaymentRequestModel.toRequest(
   clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
   transactionId: 'TX-123',
-  deviceType: PPDeviceTypeEnum.POS, // opsiyonel, varsayılan: POS
   note: 'Müşteri iptali talep etti', // opsiyonel
 );
 ```
@@ -113,7 +111,6 @@ PPEftPaymentRequestModel.toRequest(
   paymentMethod: PPPaymentMethod.CC,
   transactionId: 'EFT-001',
   taxRate: 18,
-  deviceType: PPDeviceTypeEnum.POS, // opsiyonel, varsayılan: POS
   installment: null, // opsiyonel
 );
 ```
@@ -125,7 +122,6 @@ PPEftCancelRequestModel.toRequest(
   clientToken: 'YOUR-CLIENT-TOKEN',
   transactionId: 'EFT-001',
   totalAmount: 250.0,
-  deviceType: PPDeviceTypeEnum.POS, // opsiyonel, varsayılan: POS
 );
 ```
 
@@ -135,7 +131,6 @@ PPEftCancelRequestModel.toRequest(
 PPOrderPaymentRequestModel.toRequest(
   clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
-  deviceType: PPDeviceTypeEnum.POS, // opsiyonel, varsayılan: POS
 );
 ```
 
@@ -242,12 +237,6 @@ Gün sonu rapor tipleri.
 Parametre güncelleme tipleri.
 
 `bank`, `multinet`, `metropol`, `paye`, `iwallet`
-
-### PPDeviceTypeEnum
-
-Hedef cihaz tipi.
-
-`POS`, `KIOSK`
 
 ### PPPartialPaymentType
 

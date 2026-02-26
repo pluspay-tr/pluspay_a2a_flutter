@@ -16,13 +16,11 @@ sealed class PPOrderPaymentRequestModel with _$PPOrderPaymentRequestModel {
   factory PPOrderPaymentRequestModel.toRequest({
     required String clientToken,
     required String orderCode,
-    PPDeviceTypeEnum deviceType = PPDeviceTypeEnum.POS,
   }) => PPOrderPaymentRequestModel(
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.ORDER_PAYMENT,
       clientToken: clientToken,
       orderCode: orderCode,
-      deviceType: deviceType,
     ),
   );
 }
