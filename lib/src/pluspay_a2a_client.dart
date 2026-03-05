@@ -222,6 +222,14 @@ class PPA2AClient {
     return PPEodResponseModel.fromJson(response);
   }
 
+  /// Start a multi payment flow on POS+.
+  Future<PPMultiPaymentResponseModel> startMultiPayment(
+    PPMultiPaymentRequest request,
+  ) async {
+    final response = await _sendRequest(request.toJson());
+    return PPMultiPaymentResponseModel.fromJson(response);
+  }
+
   /// Trigger parameter update on POS+.
   Future<PPParametersResponseModel> triggerParameters(
     PPParameterRequestModel request,

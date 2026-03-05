@@ -35,4 +35,5 @@ const _$PPTransactionTypeEnumMap = {
   PPTransactionType.ORDER_PAYMENT: 'ORDER_PAYMENT',
   PPTransactionType.EOD: 'EOD',
   PPTransactionType.PARAMETERS: 'PARAMETERS',
+  PPTransactionType.ORDER_MULTI_PAYMENT: 'ORDER_MULTI_PAYMENT',
 };

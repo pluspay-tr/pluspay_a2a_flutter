@@ -45,6 +45,8 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+  String get generateOrderCode => DateTime.now().toIso8601String();
+
   Future<void> _execute(Future<dynamic> Function() fn) async {
     setState(() {
       _loading = true;
@@ -196,6 +198,49 @@ class _HomePageState extends State<HomePage> {
                       PPOrderPaymentRequestModel.toRequest(
                         orderCode: 'ORD001',
                         clientToken: _clientToken,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                SectionHeader(title: 'Coklu Odeme'),
+                ActionButton(
+                  icon: Icons.payments,
+                  label: 'Coklu Odeme',
+                  onTap: () => _execute(
+                    () => _pluspay.startMultiPayment(
+                      PPMultiPaymentRequest.toRequest(
+                        clientToken: _clientToken,
+                        changePaymentStatus: true,
+                        orderCode: generateOrderCode,
+                        orderDate: DateTime.now(),
+                        serialNo: 'MX0823000071',
+                        products: [
+                          ProductModel(
+                            id: 1,
+                            sku: 'SKU001',
+                            unit: PPQtyEnums.ADET,
+                            price: 100.0,
+                            title: 'Test Urun 1',
+                            quantity: 1,
+                            taxRate: 20,
+                            vatInclude: true,
+                            productType: PPProductTypeEnum.PHYSICALLY,
+                            discountValue: 0,
+                          ),
+                        ],
+                        transactions: [
+                          TransactionModel(
+                            paymentType: PPPaymentType.BANK_TRANSFER,
+                            totalAmount: 50.0,
+                            paymentMethod: PPPaymentMethod.NONE,
+                          ),
+                          TransactionModel(
+                            paymentType: PPPaymentType.BANK_TRANSFER,
+                            totalAmount: 50.0,
+                            paymentMethod: PPPaymentMethod.NONE,
+                          ),
+                        ],
                       ),
                     ),
                   ),

@@ -8,6 +8,7 @@ enum PPTransactionType {
   ORDER_PAYMENT,
   EOD,
   PARAMETERS,
+  ORDER_MULTI_PAYMENT,
 }
 
 enum PPPaymentType {
@@ -113,3 +114,68 @@ enum PPDeliveryTypeEnum {
   TAKE_CLOSE
 }
 
+enum PPCurrencyType { TRY, USD, EUR, GBP }
+
+enum PPProductTypeEnum {
+  PHYSICALLY,
+  VIRTUAL,
+  INFO,
+  MD,
+  DSN,
+  QP,
+  KFO,
+  COMMISSION,
+  HGS,
+}
+
+enum PPQtyEnums {
+  ADET,
+  KG,
+  GR,
+  LT,
+  MT,
+  KOLI,
+  PAKET,
+  PORSIYON;
+}
+
+enum PPDiscountTypeEnum {
+  PERCENTAGE,
+  FIXED_AMOUNT;
+}
+
+enum PPOrderSourceEnum {
+  POS,
+  WEB,
+  KIOSK;
+}
+
+enum PPDocumentTypeEnum {
+  EFATURA,
+  EARSIV,
+  BILGIFISI;
+}
+
+enum PPDocumentStatusEnum {
+    SUCCESS,
+  CANCEL,
+  FAIL,
+  WAITING,
+  NONE;
+}
+
+enum PPTransactionStatusEnum {
+  SUCCESS,
+  CANCEL,
+  FAIL,
+  NONE,
+  WAITING,
+  NOT_RESPONSE
+}
+
+enum PPTransactionTypeEnum {
+  START,
+  SATIS,
+  CANCEL,
+  REFUND
+}

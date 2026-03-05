@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-03-05
+
+### Added
+
+- **Multi Payment support**: New `startMultiPayment` method on `PPA2AClient` for order-based multi-payment flows
+- **`PPMultiPaymentRequest`**: New request model with `toRequest` factory, supporting products, transactions, billing info, delivery options, and more
+- **`PPMultiPaymentResponseModel`**: Comprehensive response model with detailed product, transaction, tax, card info, and document sub-models
+- **`ProductModel`** and **`TransactionModel`**: New models for defining products and transactions in multi-payment requests
+- **`Formatter`** utility class for DateTime serialization (`yyyy-MM-dd HH:mm` format)
+- New enums:
+  - `PPCurrencyType` (`TRY`, `USD`, `EUR`, `GBP`)
+  - `PPProductTypeEnum` (`PHYSICALLY`, `VIRTUAL`, `INFO`, `MD`, `DSN`, `QP`, `KFO`, `COMMISSION`, `HGS`)
+  - `PPQtyEnums` (`ADET`, `KG`, `GR`, `LT`, `MT`, `KOLI`, `PAKET`, `PORSIYON`)
+  - `PPDiscountTypeEnum` (`PERCENTAGE`, `FIXED_AMOUNT`)
+  - `PPOrderSourceEnum` (`POS`, `WEB`, `KIOSK`)
+  - `PPDocumentTypeEnum` (`EFATURA`, `EARSIV`, `BILGIFISI`)
+  - `PPDocumentStatusEnum` (`SUCCESS`, `CANCEL`, `FAIL`, `WAITING`, `NONE`)
+  - `PPTransactionStatusEnum` (`SUCCESS`, `CANCEL`, `FAIL`, `NONE`, `WAITING`, `NOT_RESPONSE`)
+  - `PPTransactionTypeEnum` (`START`, `SATIS`, `CANCEL`, `REFUND`)
+  - `ORDER_MULTI_PAYMENT` added to `PPTransactionType`
+- New dependency: `intl` package for date formatting
+
 ## [0.2.3] - 2026-02-26
 
 ### Removed

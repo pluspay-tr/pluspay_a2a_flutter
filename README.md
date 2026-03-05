@@ -15,7 +15,7 @@ dependencies:
   pluspay_a2a:
     git:
       url: https://github.com/plus-pay-tr/pluspay_a2a.git
-      ref: 0.2.3
+      ref: 0.3.0
 ```
 
 > **Not:** `ref` değeri olarak her zaman kullanmak istediğiniz versiyonun tag'ini belirtin (örn. `0.1.0`, `0.2.0`). Mevcut versiyonları görmek için [tags](https://github.com/plus-pay-tr/pluspay_a2a/tags) sayfasını ziyaret edin. Her zaman son versiyonu kullanmanızı öneririz.
@@ -66,6 +66,7 @@ Tüm metodlar `PPA2AClient` sınıfı üzerindedir. Her metod başarılı durumd
 | `startEftPayment` | `PPEftPaymentRequestModel` | `PPStartPaymentResponseModel` | EFT POS ödemesi başlat |
 | `cancelEftPayment` | `PPEftCancelRequestModel` | `PPStartPaymentResponseModel` | EFT POS ödemesini iptal et |
 | `startOrderPayment` | `PPOrderPaymentRequestModel` | `PPOrderPaymentResponseModel` | Sipariş ödemesi başlat |
+| `startMultiPayment` | `PPMultiPaymentRequest` | `PPMultiPaymentResponseModel` | Çoklu ödeme başlat |
 | `triggerEod` | `PPEodRequestModel` | `PPEodResponseModel` | Gün sonu tetikle |
 | `triggerParameters` | `PPParameterRequestModel` | `PPParametersResponseModel` | Parametre güncellemesi tetikle |
 
@@ -154,6 +155,46 @@ PPParameterRequestModel.toRequest(
 );
 ```
 
+### Çoklu Ödeme (Multi Payment)
+
+```dart
+PPMultiPaymentRequest.toRequest(
+  clientToken: 'YOUR-CLIENT-TOKEN',
+  orderCode: 'ORD-001',
+  orderDate: DateTime.now(),
+  serialNo: 'SERIAL-001',
+  changePaymentStatus: true,
+  products: [
+    ProductModel(
+      id: 1,
+      sku: 'SKU-001',
+      title: 'Ürün 1',
+      price: 100.0,
+      quantity: 1,
+      taxRate: 10,
+      unit: PPQtyEnums.ADET,
+      vatInclude: true,
+      productType: PPProductTypeEnum.PHYSICALLY,
+      discountValue: 0,
+    ),
+  ],
+  transactions: [
+    TransactionModel(
+      paymentType: PPPaymentType.POS,
+      totalAmount: 100.0,
+      paymentMethod: PPPaymentMethod.CC,
+    ),
+  ],
+  currency: PPCurrencyType.TRY,           // opsiyonel, varsayılan: TRY
+  deliveryType: PPDeliveryTypeEnum.CASH_ORDER, // opsiyonel, varsayılan: CASH_ORDER
+  discountAmount: 0,                       // opsiyonel, varsayılan: 0
+  billingInformation: null,                // opsiyonel
+  installment: null,                       // opsiyonel
+  groupCode: null,                         // opsiyonel
+  note: null,                              // opsiyonel
+);
+```
+
 ## Yanıt Modelleri
 
 ### PPStartPaymentResponseModel
@@ -212,6 +253,30 @@ Her `PPEodResponseItem`; `eodType` (`PPEodType`), `success` (`bool`) ve opsiyone
 
 Her `PPParameterResultModel`; `type` (`PPParameterTypes`), `completed` (`bool`) ve opsiyonel `errorMessage` alanlarını içerir.
 
+### PPMultiPaymentResponseModel
+
+`startMultiPayment` metodu tarafından döndürülür.
+
+| Alan | Tip | Açıklama |
+|------|-----|----------|
+| `id` | `String` | İşlem ID |
+| `orderCode` | `String` | Sipariş kodu |
+| `products` | `List<PPMultiPaymentProduct>` | Ürün detayları |
+| `transactions` | `List<PPMultiPaymentTransaction>` | İşlem detayları |
+| `paymentType` | `PPPaymentType` | Ödeme tipi |
+| `paymentMethod` | `PPPaymentMethod` | Ödeme yöntemi |
+| `status` | `PPOrderStatusEnum` | Sipariş durumu |
+| `totalAmount` | `double` | Toplam tutar |
+| `discountAmount` | `double` | İndirim tutarı |
+| `subTotal` | `double` | Ara toplam |
+| `taxAmount` | `double` | Vergi tutarı |
+| `grandTotal` | `double` | Genel toplam |
+| `totalPaid` | `double` | Ödenen tutar |
+| `amountDue` | `double` | Kalan tutar |
+| `preTotal` | `PPMultiPaymentPreTotal` | Ön toplam bilgileri |
+| `deliveryType` | `PPDeliveryTypeEnum` | Teslimat tipi |
+| `customer` | `PPMultiPaymentCustomer?` | Müşteri bilgileri |
+
 ## Enum'lar
 
 ### PPPaymentType
@@ -253,6 +318,44 @@ Parametre güncelleme tipleri.
 ### PPDeliveryTypeEnum
 
 `CASH_ORDER`, `PACKAGE_ORDER`, `TABLE_ORDER`, `TAKE_AWAY`, `TAKE_CLOSE`
+
+### PPCurrencyType
+
+`TRY`, `USD`, `EUR`, `GBP`
+
+### PPProductTypeEnum
+
+`PHYSICALLY`, `VIRTUAL`, `INFO`, `MD`, `DSN`, `QP`, `KFO`, `COMMISSION`, `HGS`
+
+### PPQtyEnums
+
+Miktar birimleri.
+
+`ADET`, `KG`, `GR`, `LT`, `MT`, `KOLI`, `PAKET`, `PORSIYON`
+
+### PPDiscountTypeEnum
+
+`PERCENTAGE`, `FIXED_AMOUNT`
+
+### PPDocumentTypeEnum
+
+`EFATURA`, `EARSIV`, `BILGIFISI`
+
+### PPDocumentStatusEnum
+
+`SUCCESS`, `CANCEL`, `FAIL`, `WAITING`, `NONE`
+
+### PPTransactionStatusEnum
+
+`SUCCESS`, `CANCEL`, `FAIL`, `NONE`, `WAITING`, `NOT_RESPONSE`
+
+### PPTransactionTypeEnum
+
+`START`, `SATIS`, `CANCEL`, `REFUND`
+
+### PPOrderSourceEnum
+
+`POS`, `WEB`, `KIOSK`
 
 ## Hata Yönetimi
 
