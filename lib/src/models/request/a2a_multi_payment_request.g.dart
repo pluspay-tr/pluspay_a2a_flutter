@@ -33,7 +33,6 @@ _PPMultiPaymentRequestData _$PPMultiPaymentRequestDataFromJson(
   customer: json['customer'] == null
       ? null
       : PPBillingInfo.fromJson(json['customer'] as Map<String, dynamic>),
-  serialNo: json['serial_no'] as String,
   hash: json['hash'] as String?,
   products: (json['products'] as List<dynamic>)
       .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
@@ -66,7 +65,6 @@ Map<String, dynamic> _$PPMultiPaymentRequestDataToJson(
   'user_id': instance.userId,
   'currency': _$PPCurrencyTypeEnumMap[instance.currency]!,
   'customer': instance.customer?.toJson(),
-  'serial_no': instance.serialNo,
   'hash': instance.hash,
   'products': instance.products.map((e) => e.toJson()).toList(),
   'group_code': instance.groupCode,

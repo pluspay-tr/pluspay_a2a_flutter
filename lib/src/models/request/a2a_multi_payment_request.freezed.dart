@@ -311,7 +311,7 @@ $PPGeneralRequestHeaderCopyWith<$Res> get header {
 /// @nodoc
 mixin _$PPMultiPaymentRequestData {
 
- String? get note; String? get userId; PPCurrencyType get currency; PPBillingInfo? get customer; String get serialNo; String? get hash;/// NEW FIELDS
+ String? get note; String? get userId; PPCurrencyType get currency; PPBillingInfo? get customer; String? get hash;/// NEW FIELDS
  List<ProductModel> get products; String? get groupCode; String get orderCode;@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime get orderDate; int? get startTime; int? get installment; String? get orderNumber; String? get specialCode; List<TransactionModel> get transactions; PPDeliveryTypeEnum get deliveryType; PPDeliveryStatusEnum? get deliveryStatus; double get discountAmount; bool get changePaymentStatus;
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
@@ -325,16 +325,16 @@ $PPMultiPaymentRequestDataCopyWith<PPMultiPaymentRequestData> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.serialNo, serialNo) || other.serialNo == serialNo)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other.products, products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other.products, products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,note,userId,currency,customer,serialNo,hash,const DeepCollectionEquality().hash(products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus]);
+int get hashCode => Object.hash(runtimeType,note,userId,currency,customer,hash,const DeepCollectionEquality().hash(products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus);
 
 @override
 String toString() {
-  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, serialNo: $serialNo, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus)';
+  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus)';
 }
 
 
@@ -345,7 +345,7 @@ abstract mixin class $PPMultiPaymentRequestDataCopyWith<$Res>  {
   factory $PPMultiPaymentRequestDataCopyWith(PPMultiPaymentRequestData value, $Res Function(PPMultiPaymentRequestData) _then) = _$PPMultiPaymentRequestDataCopyWithImpl;
 @useResult
 $Res call({
- String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String serialNo, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus
+ String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus
 });
 
 
@@ -362,14 +362,13 @@ class _$PPMultiPaymentRequestDataCopyWithImpl<$Res>
 
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? serialNo = null,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,}) {
   return _then(_self.copyWith(
 note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String?,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as PPCurrencyType,customer: freezed == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
-as PPBillingInfo?,serialNo: null == serialNo ? _self.serialNo : serialNo // ignore: cast_nullable_to_non_nullable
-as String,hash: freezed == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
+as PPBillingInfo?,hash: freezed == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String?,products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
 as List<ProductModel>,groupCode: freezed == groupCode ? _self.groupCode : groupCode // ignore: cast_nullable_to_non_nullable
 as String?,orderCode: null == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
@@ -477,10 +476,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String serialNo,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PPMultiPaymentRequestData() when $default != null:
-return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.serialNo,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);case _:
+return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);case _:
   return orElse();
 
 }
@@ -498,10 +497,10 @@ return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.seri
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String serialNo,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)  $default,) {final _that = this;
 switch (_that) {
 case _PPMultiPaymentRequestData():
-return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.serialNo,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);}
+return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -515,10 +514,10 @@ return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.seri
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String serialNo,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)?  $default,) {final _that = this;
 switch (_that) {
 case _PPMultiPaymentRequestData() when $default != null:
-return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.serialNo,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);case _:
+return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);case _:
   return null;
 
 }
@@ -530,14 +529,13 @@ return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.seri
 @JsonSerializable()
 
 class _PPMultiPaymentRequestData implements PPMultiPaymentRequestData {
-  const _PPMultiPaymentRequestData({this.note, this.userId, required this.currency, this.customer, required this.serialNo, this.hash, required final  List<ProductModel> products, this.groupCode, required this.orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) required this.orderDate, this.startTime, this.installment, this.orderNumber, this.specialCode, required final  List<TransactionModel> transactions, required this.deliveryType, this.deliveryStatus, required this.discountAmount, required this.changePaymentStatus}): _products = products,_transactions = transactions;
+  const _PPMultiPaymentRequestData({this.note, this.userId, required this.currency, this.customer, this.hash, required final  List<ProductModel> products, this.groupCode, required this.orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) required this.orderDate, this.startTime, this.installment, this.orderNumber, this.specialCode, required final  List<TransactionModel> transactions, required this.deliveryType, this.deliveryStatus, required this.discountAmount, required this.changePaymentStatus}): _products = products,_transactions = transactions;
   factory _PPMultiPaymentRequestData.fromJson(Map<String, dynamic> json) => _$PPMultiPaymentRequestDataFromJson(json);
 
 @override final  String? note;
 @override final  String? userId;
 @override final  PPCurrencyType currency;
 @override final  PPBillingInfo? customer;
-@override final  String serialNo;
 @override final  String? hash;
 /// NEW FIELDS
  final  List<ProductModel> _products;
@@ -580,16 +578,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.serialNo, serialNo) || other.serialNo == serialNo)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,note,userId,currency,customer,serialNo,hash,const DeepCollectionEquality().hash(_products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(_transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus]);
+int get hashCode => Object.hash(runtimeType,note,userId,currency,customer,hash,const DeepCollectionEquality().hash(_products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(_transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus);
 
 @override
 String toString() {
-  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, serialNo: $serialNo, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus)';
+  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus)';
 }
 
 
@@ -600,7 +598,7 @@ abstract mixin class _$PPMultiPaymentRequestDataCopyWith<$Res> implements $PPMul
   factory _$PPMultiPaymentRequestDataCopyWith(_PPMultiPaymentRequestData value, $Res Function(_PPMultiPaymentRequestData) _then) = __$PPMultiPaymentRequestDataCopyWithImpl;
 @override @useResult
 $Res call({
- String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String serialNo, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus
+ String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus
 });
 
 
@@ -617,14 +615,13 @@ class __$PPMultiPaymentRequestDataCopyWithImpl<$Res>
 
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? serialNo = null,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,}) {
   return _then(_PPMultiPaymentRequestData(
 note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String?,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as PPCurrencyType,customer: freezed == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
-as PPBillingInfo?,serialNo: null == serialNo ? _self.serialNo : serialNo // ignore: cast_nullable_to_non_nullable
-as String,hash: freezed == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
+as PPBillingInfo?,hash: freezed == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String?,products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
 as List<ProductModel>,groupCode: freezed == groupCode ? _self.groupCode : groupCode // ignore: cast_nullable_to_non_nullable
 as String?,orderCode: null == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable

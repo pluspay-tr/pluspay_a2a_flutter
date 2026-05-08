@@ -21,7 +21,6 @@ sealed class PPMultiPaymentRequest with _$PPMultiPaymentRequest {
     required DateTime orderDate,
     required List<ProductModel> products,
     required List<TransactionModel> transactions,
-    required String serialNo,
     PPBillingInfo? billingInformation,
     String? groupCode,
     String? note,
@@ -45,7 +44,6 @@ sealed class PPMultiPaymentRequest with _$PPMultiPaymentRequest {
       orderCode: orderCode,
       orderDate: orderDate,
       products: products,
-      serialNo: serialNo,
       transactions: transactions,
       customer:billingInformation,
       deliveryStatus: deliveryStatus,
@@ -71,7 +69,6 @@ sealed class PPMultiPaymentRequestData with _$PPMultiPaymentRequestData {
     String? userId,
     required PPCurrencyType currency,
     PPBillingInfo? customer,
-    required String serialNo,
     String? hash,
 
     /// NEW FIELDS

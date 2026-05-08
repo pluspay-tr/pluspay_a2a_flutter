@@ -214,7 +214,6 @@ class _HomePageState extends State<HomePage> {
                         changePaymentStatus: true,
                         orderCode: generateOrderCode,
                         orderDate: DateTime.now(),
-                        serialNo: 'MX0823000071',
                         products: [
                           ProductModel(
                             id: 1,
