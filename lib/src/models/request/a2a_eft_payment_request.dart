@@ -15,8 +15,8 @@ sealed class PPEftPaymentRequestModel with _$PPEftPaymentRequestModel {
       _$PPEftPaymentRequestModelFromJson(json);
 
   factory PPEftPaymentRequestModel.toRequest({
-    
-    required String clientToken,
+    // clientToken: temporarily removed. May be re-enabled in the future.
+    // required String clientToken,
     required double totalAmount,
     required PPPaymentType paymentType,
     required PPPaymentMethod paymentMethod,
@@ -34,7 +34,7 @@ sealed class PPEftPaymentRequestModel with _$PPEftPaymentRequestModel {
     ),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_EFTPOS,
-      clientToken: clientToken,
+      // clientToken: clientToken,
     ),
   );
 }

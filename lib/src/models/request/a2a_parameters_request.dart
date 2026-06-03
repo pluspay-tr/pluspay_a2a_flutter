@@ -15,15 +15,15 @@ sealed class PPParameterRequestModel with _$PPParameterRequestModel {
       _$PPParameterRequestModelFromJson(json);
 
   factory PPParameterRequestModel.toRequest({
-    
-    required String clientToken,
+    // clientToken: temporarily removed. May be re-enabled in the future.
+    // required String clientToken,
     List<PPParameterTypes> types = const [],
     bool isAll = false,
   }) => PPParameterRequestModel(
     data: PPParameterRequestData(types: types, isAll: isAll),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.PARAMETERS,
-      clientToken: clientToken,
+      // clientToken: clientToken,
     ),
   );
 }

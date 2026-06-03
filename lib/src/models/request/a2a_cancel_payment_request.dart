@@ -15,7 +15,8 @@ sealed class PPCancelPaymentRequestModel with _$PPCancelPaymentRequestModel {
       _$PPCancelPaymentRequestModelFromJson(json);
 
   factory PPCancelPaymentRequestModel.toRequest({
-    required String clientToken,
+    // clientToken: temporarily removed. May be re-enabled in the future.
+    // required String clientToken,
     required String transactionId,
     required String orderCode,
     String? note,
@@ -23,7 +24,7 @@ sealed class PPCancelPaymentRequestModel with _$PPCancelPaymentRequestModel {
     data: PPCancelPaymentRequestData(transactionId: transactionId, note: note),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_PAYMENT_CANCEL,
-      clientToken: clientToken,
+      // clientToken: clientToken,
       orderCode: orderCode,
     ),
   );

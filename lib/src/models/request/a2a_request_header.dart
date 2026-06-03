@@ -8,7 +8,9 @@ part 'a2a_request_header.g.dart';
 sealed class PPGeneralRequestHeader with _$PPGeneralRequestHeader {
   const factory PPGeneralRequestHeader({
     required PPTransactionType transactionType,
-    required String clientToken,
+    // clientToken: temporarily removed from the request payload.
+    // May be re-enabled in the future.
+    // required String clientToken,
     String? orderCode,
     String? transactionId,
   }) = _PPGeneralRequestHeader;

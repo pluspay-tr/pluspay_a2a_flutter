@@ -16,14 +16,15 @@ sealed class PPEftCancelRequestModel with _$PPEftCancelRequestModel {
       _$PPEftCancelRequestModelFromJson(json);
 
   factory PPEftCancelRequestModel.toRequest({
-    required String clientToken,
+    // clientToken: temporarily removed. May be re-enabled in the future.
+    // required String clientToken,
     required String transactionId,
     required double totalAmount,
   }) => PPEftCancelRequestModel(
     data: PPEftCancelRequestData(totalAmount: totalAmount),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_EFTPOS_CANCEL,
-      clientToken: clientToken,
+      // clientToken: clientToken,
       transactionId: transactionId,
     ),
   );

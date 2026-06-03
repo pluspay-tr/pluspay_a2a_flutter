@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-06-03
+
+### Changed
+
+- **BREAKING – `clientToken` removed**: The `clientToken` parameter is no longer required (or accepted) by any request. It has been commented out across all `toRequest` factories and the `PPGeneralRequestHeader` model, and is no longer included in the request payload. It may be re-enabled in a future release.
+  - Affected requests: `PPStartPaymentRequestModel`, `PPCancelPaymentRequestModel`, `PPEftPaymentRequestModel`, `PPEftCancelRequestModel`, `PPOrderPaymentRequestModel`, `PPMultiPaymentRequest`, `PPParameterRequestModel`, `PPEodRequestModel`.
+  - Migration: remove any `clientToken:` arguments from your `toRequest(...)` calls.
+
 ## [0.3.1] - 2026-05-08
 
 ### Removed

@@ -15,7 +15,8 @@ sealed class PPMultiPaymentRequest with _$PPMultiPaymentRequest {
       _$PPMultiPaymentRequestFromJson(json);
 
   factory PPMultiPaymentRequest.toRequest({
-    required String clientToken,
+    // clientToken: temporarily removed. May be re-enabled in the future.
+    // required String clientToken,
     required bool changePaymentStatus,
     required String orderCode,
     required DateTime orderDate,
@@ -57,7 +58,7 @@ sealed class PPMultiPaymentRequest with _$PPMultiPaymentRequest {
     ),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.ORDER_MULTI_PAYMENT,
-      clientToken: clientToken,
+      // clientToken: clientToken,
     ),
   );
 }

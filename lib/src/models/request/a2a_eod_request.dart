@@ -15,15 +15,15 @@ sealed class PPEodRequestModel with _$PPEodRequestModel {
       _$PPEodRequestModelFromJson(json);
 
   factory PPEodRequestModel.toRequest({
-    
-    required String clientToken,
+    // clientToken: temporarily removed. May be re-enabled in the future.
+    // required String clientToken,
     List<PPEodType> types = const [],
     bool isAll = false,
   }) => PPEodRequestModel(
     data: PPEodRequestData(types: types, isAll: isAll),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.EOD,
-      clientToken: clientToken,
+      // clientToken: clientToken,
     ),
   );
 }

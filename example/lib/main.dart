@@ -31,8 +31,6 @@ class _HomePageState extends State<HomePage> {
   final PPA2AClient _pluspay = PPA2AClient();
   bool _loading = false;
 
-  final String _clientToken = 'YOUR_CLIENT_TOKEN';
-
   @override
   void initState() {
     super.initState();
@@ -72,11 +70,10 @@ class _HomePageState extends State<HomePage> {
     await _execute(
       () => _pluspay.startPayment(
         PPStartPaymentRequestModel.toRequest(
-          orderCode: 'ORD001',
-          totalAmount: 2.0,
-          paymentType: PPPaymentType.POS,
-          paymentMethod: PPPaymentMethod.CC,
-          clientToken: _clientToken,
+          orderCode: '86206823',
+          totalAmount: 11.9,
+          paymentType: PPPaymentType.MULTINET,
+          paymentMethod: PPPaymentMethod.NFC,
         ),
       ),
     );
@@ -89,7 +86,6 @@ class _HomePageState extends State<HomePage> {
           orderCode: 'ORD001',
           transactionId: 'TX001',
           note: 'Test iptali',
-          clientToken: _clientToken,
         ),
       ),
     );
@@ -104,7 +100,6 @@ class _HomePageState extends State<HomePage> {
           paymentMethod: PPPaymentMethod.CC,
           transactionId: Uuid().v4(),
           taxRate: 0,
-          clientToken: _clientToken,
         ),
       ),
     );
@@ -116,7 +111,6 @@ class _HomePageState extends State<HomePage> {
         PPEftCancelRequestModel.toRequest(
           transactionId: Uuid().v4(),
           totalAmount: 3.0,
-          clientToken: _clientToken,
         ),
       ),
     );
@@ -127,7 +121,6 @@ class _HomePageState extends State<HomePage> {
       () => _pluspay.startOrderPayment(
         PPOrderPaymentRequestModel.toRequest(
           orderCode: 'ORD001',
-          clientToken: _clientToken,
         ),
       ),
     );
@@ -197,7 +190,6 @@ class _HomePageState extends State<HomePage> {
                     () => _pluspay.startOrderPayment(
                       PPOrderPaymentRequestModel.toRequest(
                         orderCode: 'ORD001',
-                        clientToken: _clientToken,
                       ),
                     ),
                   ),
@@ -210,7 +202,6 @@ class _HomePageState extends State<HomePage> {
                   onTap: () => _execute(
                     () => _pluspay.startMultiPayment(
                       PPMultiPaymentRequest.toRequest(
-                        clientToken: _clientToken,
                         changePaymentStatus: true,
                         orderCode: generateOrderCode,
                         orderDate: DateTime.now(),
@@ -254,7 +245,6 @@ class _HomePageState extends State<HomePage> {
                       PPEodRequestModel.toRequest(
                         isAll: false,
                         types: [PPEodType.POS, PPEodType.MULTINET],
-                        clientToken: _clientToken,
                       ),
                     ),
                   ),
@@ -270,7 +260,6 @@ class _HomePageState extends State<HomePage> {
                           PPParameterTypes.bank,
                           PPParameterTypes.multinet,
                         ],
-                        clientToken: _clientToken,
                       ),
                     ),
                   ),
