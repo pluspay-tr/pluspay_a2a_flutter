@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-06-04
+
+### Fixed
+
+- **`PPMultiPaymentRequest.toRequest` – `currency` artık dikkate alınıyor**: Önceden `currency` parametresi yok sayılıp gövdeye sabit `PPCurrencyType.TRY` yazılıyordu. Artık çağrıda verilen `currency` değeri (`TRY`/`USD`/`EUR`/`GBP`) doğru şekilde gönderiliyor.
+
+### Added
+
+- **`ProductModel` – `otvOrani` ve `konaklamaOrani`**: Çoklu ödeme ürünlerine ÖTV ve konaklama oranı alanları eklendi (`otv_orani` / `konaklama_orani`, varsayılan `0`). POS+ tarafı bu alanları artık okuyor.
+- **`PPMultiPaymentRequest` – `canTryAgain`**: `toRequest` ve `PPMultiPaymentRequestData` için `canTryAgain` alanı eklendi (`can_try_again`, varsayılan `true`).
+- **`PPBillingInfo` – `code`**: Fatura bilgisine opsiyonel `code` alanı eklendi (`code`).
+
+### Notes
+
+- Tüm yeni alanlar varsayılan değerlere sahiptir; değişiklik geriye dönük uyumludur (breaking değil).
+
 ## [0.4.0] - 2026-06-03
 
 ### Changed

@@ -128,6 +128,7 @@ _PPBillingInfo _$PPBillingInfoFromJson(Map<String, dynamic> json) =>
       city: json['city'] as String?,
       district: json['district'] as String?,
       taxOffice: json['tax_office'] as String?,
+      code: json['code'] as String?,
     );
 
 Map<String, dynamic> _$PPBillingInfoToJson(_PPBillingInfo instance) =>
@@ -140,4 +141,5 @@ Map<String, dynamic> _$PPBillingInfoToJson(_PPBillingInfo instance) =>
       'city': instance.city,
       'district': instance.district,
       'tax_office': instance.taxOffice,
+      'code': instance.code,
     };

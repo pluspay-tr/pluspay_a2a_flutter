@@ -35,11 +35,12 @@ sealed class PPMultiPaymentRequest with _$PPMultiPaymentRequest {
     PPDeliveryStatusEnum? deliveryStatus,
     PPDeliveryTypeEnum deliveryType = PPDeliveryTypeEnum.CASH_ORDER,
     int? installment,
+    bool canTryAgain = true,
   }) => PPMultiPaymentRequest(
     data: PPMultiPaymentRequestData(
       installment: installment,
       changePaymentStatus: changePaymentStatus,
-      currency: PPCurrencyType.TRY,
+      currency: currency,
       deliveryType: deliveryType,
       discountAmount: discountAmount,
       orderCode: orderCode,
@@ -54,7 +55,8 @@ sealed class PPMultiPaymentRequest with _$PPMultiPaymentRequest {
       orderNumber: orderNumber,
       specialCode:specialCode,
       startTime: startTime,
-      userId: userId, 
+      userId: userId,
+      canTryAgain: canTryAgain,
     ),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.ORDER_MULTI_PAYMENT,
@@ -87,6 +89,7 @@ sealed class PPMultiPaymentRequestData with _$PPMultiPaymentRequestData {
     PPDeliveryStatusEnum? deliveryStatus,
     required double discountAmount,
     required bool changePaymentStatus,
+    @Default(true) bool canTryAgain,
   }) = _PPMultiPaymentRequestData;
 
   factory PPMultiPaymentRequestData.fromJson(Map<String, dynamic> json) =>
@@ -113,6 +116,8 @@ sealed class ProductModel with _$ProductModel {
     String? categoryName,
     PPDiscountTypeEnum? discountType,
     String? exemptionCode,
+    @Default(0) int otvOrani,
+    @Default(0) int konaklamaOrani,
   }) = _ProductModel;
 
 

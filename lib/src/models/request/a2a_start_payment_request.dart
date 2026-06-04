@@ -88,6 +88,7 @@ sealed class PPBillingInfo with _$PPBillingInfo {
     String? city,
     String? district,
     String? taxOffice,
+    String? code,
   }) = _PPBillingInfo;
 
   factory PPBillingInfo.fromJson(Map<String, dynamic> json) =>

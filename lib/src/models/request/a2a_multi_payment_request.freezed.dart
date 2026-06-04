@@ -312,7 +312,7 @@ $PPGeneralRequestHeaderCopyWith<$Res> get header {
 mixin _$PPMultiPaymentRequestData {
 
  String? get note; String? get userId; PPCurrencyType get currency; PPBillingInfo? get customer; String? get hash;/// NEW FIELDS
- List<ProductModel> get products; String? get groupCode; String get orderCode;@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime get orderDate; int? get startTime; int? get installment; String? get orderNumber; String? get specialCode; List<TransactionModel> get transactions; PPDeliveryTypeEnum get deliveryType; PPDeliveryStatusEnum? get deliveryStatus; double get discountAmount; bool get changePaymentStatus;
+ List<ProductModel> get products; String? get groupCode; String get orderCode;@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime get orderDate; int? get startTime; int? get installment; String? get orderNumber; String? get specialCode; List<TransactionModel> get transactions; PPDeliveryTypeEnum get deliveryType; PPDeliveryStatusEnum? get deliveryStatus; double get discountAmount; bool get changePaymentStatus; bool get canTryAgain;
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -325,16 +325,16 @@ $PPMultiPaymentRequestDataCopyWith<PPMultiPaymentRequestData> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other.products, products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other.products, products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus)&&(identical(other.canTryAgain, canTryAgain) || other.canTryAgain == canTryAgain));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,note,userId,currency,customer,hash,const DeepCollectionEquality().hash(products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus);
+int get hashCode => Object.hashAll([runtimeType,note,userId,currency,customer,hash,const DeepCollectionEquality().hash(products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus,canTryAgain]);
 
 @override
 String toString() {
-  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus)';
+  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus, canTryAgain: $canTryAgain)';
 }
 
 
@@ -345,7 +345,7 @@ abstract mixin class $PPMultiPaymentRequestDataCopyWith<$Res>  {
   factory $PPMultiPaymentRequestDataCopyWith(PPMultiPaymentRequestData value, $Res Function(PPMultiPaymentRequestData) _then) = _$PPMultiPaymentRequestDataCopyWithImpl;
 @useResult
 $Res call({
- String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus
+ String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus, bool canTryAgain
 });
 
 
@@ -362,7 +362,7 @@ class _$PPMultiPaymentRequestDataCopyWithImpl<$Res>
 
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,Object? canTryAgain = null,}) {
   return _then(_self.copyWith(
 note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
@@ -382,6 +382,7 @@ as List<TransactionModel>,deliveryType: null == deliveryType ? _self.deliveryTyp
 as PPDeliveryTypeEnum,deliveryStatus: freezed == deliveryStatus ? _self.deliveryStatus : deliveryStatus // ignore: cast_nullable_to_non_nullable
 as PPDeliveryStatusEnum?,discountAmount: null == discountAmount ? _self.discountAmount : discountAmount // ignore: cast_nullable_to_non_nullable
 as double,changePaymentStatus: null == changePaymentStatus ? _self.changePaymentStatus : changePaymentStatus // ignore: cast_nullable_to_non_nullable
+as bool,canTryAgain: null == canTryAgain ? _self.canTryAgain : canTryAgain // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }
@@ -476,10 +477,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus,  bool canTryAgain)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PPMultiPaymentRequestData() when $default != null:
-return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);case _:
+return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus,_that.canTryAgain);case _:
   return orElse();
 
 }
@@ -497,10 +498,10 @@ return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus,  bool canTryAgain)  $default,) {final _that = this;
 switch (_that) {
 case _PPMultiPaymentRequestData():
-return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);}
+return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus,_that.canTryAgain);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -514,10 +515,10 @@ return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? note,  String? userId,  PPCurrencyType currency,  PPBillingInfo? customer,  String? hash,  List<ProductModel> products,  String? groupCode,  String orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional)  DateTime orderDate,  int? startTime,  int? installment,  String? orderNumber,  String? specialCode,  List<TransactionModel> transactions,  PPDeliveryTypeEnum deliveryType,  PPDeliveryStatusEnum? deliveryStatus,  double discountAmount,  bool changePaymentStatus,  bool canTryAgain)?  $default,) {final _that = this;
 switch (_that) {
 case _PPMultiPaymentRequestData() when $default != null:
-return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus);case _:
+return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash,_that.products,_that.groupCode,_that.orderCode,_that.orderDate,_that.startTime,_that.installment,_that.orderNumber,_that.specialCode,_that.transactions,_that.deliveryType,_that.deliveryStatus,_that.discountAmount,_that.changePaymentStatus,_that.canTryAgain);case _:
   return null;
 
 }
@@ -529,7 +530,7 @@ return $default(_that.note,_that.userId,_that.currency,_that.customer,_that.hash
 @JsonSerializable()
 
 class _PPMultiPaymentRequestData implements PPMultiPaymentRequestData {
-  const _PPMultiPaymentRequestData({this.note, this.userId, required this.currency, this.customer, this.hash, required final  List<ProductModel> products, this.groupCode, required this.orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) required this.orderDate, this.startTime, this.installment, this.orderNumber, this.specialCode, required final  List<TransactionModel> transactions, required this.deliveryType, this.deliveryStatus, required this.discountAmount, required this.changePaymentStatus}): _products = products,_transactions = transactions;
+  const _PPMultiPaymentRequestData({this.note, this.userId, required this.currency, this.customer, this.hash, required final  List<ProductModel> products, this.groupCode, required this.orderCode, @JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) required this.orderDate, this.startTime, this.installment, this.orderNumber, this.specialCode, required final  List<TransactionModel> transactions, required this.deliveryType, this.deliveryStatus, required this.discountAmount, required this.changePaymentStatus, this.canTryAgain = true}): _products = products,_transactions = transactions;
   factory _PPMultiPaymentRequestData.fromJson(Map<String, dynamic> json) => _$PPMultiPaymentRequestDataFromJson(json);
 
 @override final  String? note;
@@ -564,6 +565,7 @@ class _PPMultiPaymentRequestData implements PPMultiPaymentRequestData {
 @override final  PPDeliveryStatusEnum? deliveryStatus;
 @override final  double discountAmount;
 @override final  bool changePaymentStatus;
+@override@JsonKey() final  bool canTryAgain;
 
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
@@ -578,16 +580,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPMultiPaymentRequestData&&(identical(other.note, note) || other.note == note)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.hash, hash) || other.hash == hash)&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.groupCode, groupCode) || other.groupCode == groupCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.startTime, startTime) || other.startTime == startTime)&&(identical(other.installment, installment) || other.installment == installment)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.specialCode, specialCode) || other.specialCode == specialCode)&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.deliveryType, deliveryType) || other.deliveryType == deliveryType)&&(identical(other.deliveryStatus, deliveryStatus) || other.deliveryStatus == deliveryStatus)&&(identical(other.discountAmount, discountAmount) || other.discountAmount == discountAmount)&&(identical(other.changePaymentStatus, changePaymentStatus) || other.changePaymentStatus == changePaymentStatus)&&(identical(other.canTryAgain, canTryAgain) || other.canTryAgain == canTryAgain));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,note,userId,currency,customer,hash,const DeepCollectionEquality().hash(_products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(_transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus);
+int get hashCode => Object.hashAll([runtimeType,note,userId,currency,customer,hash,const DeepCollectionEquality().hash(_products),groupCode,orderCode,orderDate,startTime,installment,orderNumber,specialCode,const DeepCollectionEquality().hash(_transactions),deliveryType,deliveryStatus,discountAmount,changePaymentStatus,canTryAgain]);
 
 @override
 String toString() {
-  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus)';
+  return 'PPMultiPaymentRequestData(note: $note, userId: $userId, currency: $currency, customer: $customer, hash: $hash, products: $products, groupCode: $groupCode, orderCode: $orderCode, orderDate: $orderDate, startTime: $startTime, installment: $installment, orderNumber: $orderNumber, specialCode: $specialCode, transactions: $transactions, deliveryType: $deliveryType, deliveryStatus: $deliveryStatus, discountAmount: $discountAmount, changePaymentStatus: $changePaymentStatus, canTryAgain: $canTryAgain)';
 }
 
 
@@ -598,7 +600,7 @@ abstract mixin class _$PPMultiPaymentRequestDataCopyWith<$Res> implements $PPMul
   factory _$PPMultiPaymentRequestDataCopyWith(_PPMultiPaymentRequestData value, $Res Function(_PPMultiPaymentRequestData) _then) = __$PPMultiPaymentRequestDataCopyWithImpl;
 @override @useResult
 $Res call({
- String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus
+ String? note, String? userId, PPCurrencyType currency, PPBillingInfo? customer, String? hash, List<ProductModel> products, String? groupCode, String orderCode,@JsonKey(fromJson: Formatter.stringToDateTimeWithHourRequired, toJson: Formatter.dateTimeToStringWithHourOptional) DateTime orderDate, int? startTime, int? installment, String? orderNumber, String? specialCode, List<TransactionModel> transactions, PPDeliveryTypeEnum deliveryType, PPDeliveryStatusEnum? deliveryStatus, double discountAmount, bool changePaymentStatus, bool canTryAgain
 });
 
 
@@ -615,7 +617,7 @@ class __$PPMultiPaymentRequestDataCopyWithImpl<$Res>
 
 /// Create a copy of PPMultiPaymentRequestData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? note = freezed,Object? userId = freezed,Object? currency = null,Object? customer = freezed,Object? hash = freezed,Object? products = null,Object? groupCode = freezed,Object? orderCode = null,Object? orderDate = null,Object? startTime = freezed,Object? installment = freezed,Object? orderNumber = freezed,Object? specialCode = freezed,Object? transactions = null,Object? deliveryType = null,Object? deliveryStatus = freezed,Object? discountAmount = null,Object? changePaymentStatus = null,Object? canTryAgain = null,}) {
   return _then(_PPMultiPaymentRequestData(
 note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
@@ -635,6 +637,7 @@ as List<TransactionModel>,deliveryType: null == deliveryType ? _self.deliveryTyp
 as PPDeliveryTypeEnum,deliveryStatus: freezed == deliveryStatus ? _self.deliveryStatus : deliveryStatus // ignore: cast_nullable_to_non_nullable
 as PPDeliveryStatusEnum?,discountAmount: null == discountAmount ? _self.discountAmount : discountAmount // ignore: cast_nullable_to_non_nullable
 as double,changePaymentStatus: null == changePaymentStatus ? _self.changePaymentStatus : changePaymentStatus // ignore: cast_nullable_to_non_nullable
+as bool,canTryAgain: null == canTryAgain ? _self.canTryAgain : canTryAgain // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }
@@ -658,7 +661,7 @@ $PPBillingInfoCopyWith<$Res>? get customer {
 /// @nodoc
 mixin _$ProductModel {
 
- int get id; String get sku; PPQtyEnums get unit; double get price; String get title; double get quantity; int get taxRate; String? get description; bool get vatInclude; PPProductTypeEnum get productType; double get discountValue; String? get categoryCode; String? get categoryName; PPDiscountTypeEnum? get discountType; String? get exemptionCode;
+ int get id; String get sku; PPQtyEnums get unit; double get price; String get title; double get quantity; int get taxRate; String? get description; bool get vatInclude; PPProductTypeEnum get productType; double get discountValue; String? get categoryCode; String? get categoryName; PPDiscountTypeEnum? get discountType; String? get exemptionCode; int get otvOrani; int get konaklamaOrani;
 /// Create a copy of ProductModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -671,16 +674,16 @@ $ProductModelCopyWith<ProductModel> get copyWith => _$ProductModelCopyWithImpl<P
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductModel&&(identical(other.id, id) || other.id == id)&&(identical(other.sku, sku) || other.sku == sku)&&(identical(other.unit, unit) || other.unit == unit)&&(identical(other.price, price) || other.price == price)&&(identical(other.title, title) || other.title == title)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.taxRate, taxRate) || other.taxRate == taxRate)&&(identical(other.description, description) || other.description == description)&&(identical(other.vatInclude, vatInclude) || other.vatInclude == vatInclude)&&(identical(other.productType, productType) || other.productType == productType)&&(identical(other.discountValue, discountValue) || other.discountValue == discountValue)&&(identical(other.categoryCode, categoryCode) || other.categoryCode == categoryCode)&&(identical(other.categoryName, categoryName) || other.categoryName == categoryName)&&(identical(other.discountType, discountType) || other.discountType == discountType)&&(identical(other.exemptionCode, exemptionCode) || other.exemptionCode == exemptionCode));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductModel&&(identical(other.id, id) || other.id == id)&&(identical(other.sku, sku) || other.sku == sku)&&(identical(other.unit, unit) || other.unit == unit)&&(identical(other.price, price) || other.price == price)&&(identical(other.title, title) || other.title == title)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.taxRate, taxRate) || other.taxRate == taxRate)&&(identical(other.description, description) || other.description == description)&&(identical(other.vatInclude, vatInclude) || other.vatInclude == vatInclude)&&(identical(other.productType, productType) || other.productType == productType)&&(identical(other.discountValue, discountValue) || other.discountValue == discountValue)&&(identical(other.categoryCode, categoryCode) || other.categoryCode == categoryCode)&&(identical(other.categoryName, categoryName) || other.categoryName == categoryName)&&(identical(other.discountType, discountType) || other.discountType == discountType)&&(identical(other.exemptionCode, exemptionCode) || other.exemptionCode == exemptionCode)&&(identical(other.otvOrani, otvOrani) || other.otvOrani == otvOrani)&&(identical(other.konaklamaOrani, konaklamaOrani) || other.konaklamaOrani == konaklamaOrani));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,sku,unit,price,title,quantity,taxRate,description,vatInclude,productType,discountValue,categoryCode,categoryName,discountType,exemptionCode);
+int get hashCode => Object.hash(runtimeType,id,sku,unit,price,title,quantity,taxRate,description,vatInclude,productType,discountValue,categoryCode,categoryName,discountType,exemptionCode,otvOrani,konaklamaOrani);
 
 @override
 String toString() {
-  return 'ProductModel(id: $id, sku: $sku, unit: $unit, price: $price, title: $title, quantity: $quantity, taxRate: $taxRate, description: $description, vatInclude: $vatInclude, productType: $productType, discountValue: $discountValue, categoryCode: $categoryCode, categoryName: $categoryName, discountType: $discountType, exemptionCode: $exemptionCode)';
+  return 'ProductModel(id: $id, sku: $sku, unit: $unit, price: $price, title: $title, quantity: $quantity, taxRate: $taxRate, description: $description, vatInclude: $vatInclude, productType: $productType, discountValue: $discountValue, categoryCode: $categoryCode, categoryName: $categoryName, discountType: $discountType, exemptionCode: $exemptionCode, otvOrani: $otvOrani, konaklamaOrani: $konaklamaOrani)';
 }
 
 
@@ -691,7 +694,7 @@ abstract mixin class $ProductModelCopyWith<$Res>  {
   factory $ProductModelCopyWith(ProductModel value, $Res Function(ProductModel) _then) = _$ProductModelCopyWithImpl;
 @useResult
 $Res call({
- int id, String sku, PPQtyEnums unit, double price, String title, double quantity, int taxRate, String? description, bool vatInclude, PPProductTypeEnum productType, double discountValue, String? categoryCode, String? categoryName, PPDiscountTypeEnum? discountType, String? exemptionCode
+ int id, String sku, PPQtyEnums unit, double price, String title, double quantity, int taxRate, String? description, bool vatInclude, PPProductTypeEnum productType, double discountValue, String? categoryCode, String? categoryName, PPDiscountTypeEnum? discountType, String? exemptionCode, int otvOrani, int konaklamaOrani
 });
 
 
@@ -708,7 +711,7 @@ class _$ProductModelCopyWithImpl<$Res>
 
 /// Create a copy of ProductModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? sku = null,Object? unit = null,Object? price = null,Object? title = null,Object? quantity = null,Object? taxRate = null,Object? description = freezed,Object? vatInclude = null,Object? productType = null,Object? discountValue = null,Object? categoryCode = freezed,Object? categoryName = freezed,Object? discountType = freezed,Object? exemptionCode = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? sku = null,Object? unit = null,Object? price = null,Object? title = null,Object? quantity = null,Object? taxRate = null,Object? description = freezed,Object? vatInclude = null,Object? productType = null,Object? discountValue = null,Object? categoryCode = freezed,Object? categoryName = freezed,Object? discountType = freezed,Object? exemptionCode = freezed,Object? otvOrani = null,Object? konaklamaOrani = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,sku: null == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
@@ -725,7 +728,9 @@ as double,categoryCode: freezed == categoryCode ? _self.categoryCode : categoryC
 as String?,categoryName: freezed == categoryName ? _self.categoryName : categoryName // ignore: cast_nullable_to_non_nullable
 as String?,discountType: freezed == discountType ? _self.discountType : discountType // ignore: cast_nullable_to_non_nullable
 as PPDiscountTypeEnum?,exemptionCode: freezed == exemptionCode ? _self.exemptionCode : exemptionCode // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,otvOrani: null == otvOrani ? _self.otvOrani : otvOrani // ignore: cast_nullable_to_non_nullable
+as int,konaklamaOrani: null == konaklamaOrani ? _self.konaklamaOrani : konaklamaOrani // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
@@ -807,10 +812,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String sku,  PPQtyEnums unit,  double price,  String title,  double quantity,  int taxRate,  String? description,  bool vatInclude,  PPProductTypeEnum productType,  double discountValue,  String? categoryCode,  String? categoryName,  PPDiscountTypeEnum? discountType,  String? exemptionCode)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String sku,  PPQtyEnums unit,  double price,  String title,  double quantity,  int taxRate,  String? description,  bool vatInclude,  PPProductTypeEnum productType,  double discountValue,  String? categoryCode,  String? categoryName,  PPDiscountTypeEnum? discountType,  String? exemptionCode,  int otvOrani,  int konaklamaOrani)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductModel() when $default != null:
-return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quantity,_that.taxRate,_that.description,_that.vatInclude,_that.productType,_that.discountValue,_that.categoryCode,_that.categoryName,_that.discountType,_that.exemptionCode);case _:
+return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quantity,_that.taxRate,_that.description,_that.vatInclude,_that.productType,_that.discountValue,_that.categoryCode,_that.categoryName,_that.discountType,_that.exemptionCode,_that.otvOrani,_that.konaklamaOrani);case _:
   return orElse();
 
 }
@@ -828,10 +833,10 @@ return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quan
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String sku,  PPQtyEnums unit,  double price,  String title,  double quantity,  int taxRate,  String? description,  bool vatInclude,  PPProductTypeEnum productType,  double discountValue,  String? categoryCode,  String? categoryName,  PPDiscountTypeEnum? discountType,  String? exemptionCode)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String sku,  PPQtyEnums unit,  double price,  String title,  double quantity,  int taxRate,  String? description,  bool vatInclude,  PPProductTypeEnum productType,  double discountValue,  String? categoryCode,  String? categoryName,  PPDiscountTypeEnum? discountType,  String? exemptionCode,  int otvOrani,  int konaklamaOrani)  $default,) {final _that = this;
 switch (_that) {
 case _ProductModel():
-return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quantity,_that.taxRate,_that.description,_that.vatInclude,_that.productType,_that.discountValue,_that.categoryCode,_that.categoryName,_that.discountType,_that.exemptionCode);}
+return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quantity,_that.taxRate,_that.description,_that.vatInclude,_that.productType,_that.discountValue,_that.categoryCode,_that.categoryName,_that.discountType,_that.exemptionCode,_that.otvOrani,_that.konaklamaOrani);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -845,10 +850,10 @@ return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quan
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String sku,  PPQtyEnums unit,  double price,  String title,  double quantity,  int taxRate,  String? description,  bool vatInclude,  PPProductTypeEnum productType,  double discountValue,  String? categoryCode,  String? categoryName,  PPDiscountTypeEnum? discountType,  String? exemptionCode)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String sku,  PPQtyEnums unit,  double price,  String title,  double quantity,  int taxRate,  String? description,  bool vatInclude,  PPProductTypeEnum productType,  double discountValue,  String? categoryCode,  String? categoryName,  PPDiscountTypeEnum? discountType,  String? exemptionCode,  int otvOrani,  int konaklamaOrani)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductModel() when $default != null:
-return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quantity,_that.taxRate,_that.description,_that.vatInclude,_that.productType,_that.discountValue,_that.categoryCode,_that.categoryName,_that.discountType,_that.exemptionCode);case _:
+return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quantity,_that.taxRate,_that.description,_that.vatInclude,_that.productType,_that.discountValue,_that.categoryCode,_that.categoryName,_that.discountType,_that.exemptionCode,_that.otvOrani,_that.konaklamaOrani);case _:
   return null;
 
 }
@@ -860,7 +865,7 @@ return $default(_that.id,_that.sku,_that.unit,_that.price,_that.title,_that.quan
 @JsonSerializable()
 
 class _ProductModel implements ProductModel {
-  const _ProductModel({required this.id, required this.sku, required this.unit, required this.price, required this.title, required this.quantity, required this.taxRate, this.description, required this.vatInclude, required this.productType, required this.discountValue, this.categoryCode, this.categoryName, this.discountType, this.exemptionCode});
+  const _ProductModel({required this.id, required this.sku, required this.unit, required this.price, required this.title, required this.quantity, required this.taxRate, this.description, required this.vatInclude, required this.productType, required this.discountValue, this.categoryCode, this.categoryName, this.discountType, this.exemptionCode, this.otvOrani = 0, this.konaklamaOrani = 0});
   factory _ProductModel.fromJson(Map<String, dynamic> json) => _$ProductModelFromJson(json);
 
 @override final  int id;
@@ -878,6 +883,8 @@ class _ProductModel implements ProductModel {
 @override final  String? categoryName;
 @override final  PPDiscountTypeEnum? discountType;
 @override final  String? exemptionCode;
+@override@JsonKey() final  int otvOrani;
+@override@JsonKey() final  int konaklamaOrani;
 
 /// Create a copy of ProductModel
 /// with the given fields replaced by the non-null parameter values.
@@ -892,16 +899,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductModel&&(identical(other.id, id) || other.id == id)&&(identical(other.sku, sku) || other.sku == sku)&&(identical(other.unit, unit) || other.unit == unit)&&(identical(other.price, price) || other.price == price)&&(identical(other.title, title) || other.title == title)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.taxRate, taxRate) || other.taxRate == taxRate)&&(identical(other.description, description) || other.description == description)&&(identical(other.vatInclude, vatInclude) || other.vatInclude == vatInclude)&&(identical(other.productType, productType) || other.productType == productType)&&(identical(other.discountValue, discountValue) || other.discountValue == discountValue)&&(identical(other.categoryCode, categoryCode) || other.categoryCode == categoryCode)&&(identical(other.categoryName, categoryName) || other.categoryName == categoryName)&&(identical(other.discountType, discountType) || other.discountType == discountType)&&(identical(other.exemptionCode, exemptionCode) || other.exemptionCode == exemptionCode));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductModel&&(identical(other.id, id) || other.id == id)&&(identical(other.sku, sku) || other.sku == sku)&&(identical(other.unit, unit) || other.unit == unit)&&(identical(other.price, price) || other.price == price)&&(identical(other.title, title) || other.title == title)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.taxRate, taxRate) || other.taxRate == taxRate)&&(identical(other.description, description) || other.description == description)&&(identical(other.vatInclude, vatInclude) || other.vatInclude == vatInclude)&&(identical(other.productType, productType) || other.productType == productType)&&(identical(other.discountValue, discountValue) || other.discountValue == discountValue)&&(identical(other.categoryCode, categoryCode) || other.categoryCode == categoryCode)&&(identical(other.categoryName, categoryName) || other.categoryName == categoryName)&&(identical(other.discountType, discountType) || other.discountType == discountType)&&(identical(other.exemptionCode, exemptionCode) || other.exemptionCode == exemptionCode)&&(identical(other.otvOrani, otvOrani) || other.otvOrani == otvOrani)&&(identical(other.konaklamaOrani, konaklamaOrani) || other.konaklamaOrani == konaklamaOrani));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,sku,unit,price,title,quantity,taxRate,description,vatInclude,productType,discountValue,categoryCode,categoryName,discountType,exemptionCode);
+int get hashCode => Object.hash(runtimeType,id,sku,unit,price,title,quantity,taxRate,description,vatInclude,productType,discountValue,categoryCode,categoryName,discountType,exemptionCode,otvOrani,konaklamaOrani);
 
 @override
 String toString() {
-  return 'ProductModel(id: $id, sku: $sku, unit: $unit, price: $price, title: $title, quantity: $quantity, taxRate: $taxRate, description: $description, vatInclude: $vatInclude, productType: $productType, discountValue: $discountValue, categoryCode: $categoryCode, categoryName: $categoryName, discountType: $discountType, exemptionCode: $exemptionCode)';
+  return 'ProductModel(id: $id, sku: $sku, unit: $unit, price: $price, title: $title, quantity: $quantity, taxRate: $taxRate, description: $description, vatInclude: $vatInclude, productType: $productType, discountValue: $discountValue, categoryCode: $categoryCode, categoryName: $categoryName, discountType: $discountType, exemptionCode: $exemptionCode, otvOrani: $otvOrani, konaklamaOrani: $konaklamaOrani)';
 }
 
 
@@ -912,7 +919,7 @@ abstract mixin class _$ProductModelCopyWith<$Res> implements $ProductModelCopyWi
   factory _$ProductModelCopyWith(_ProductModel value, $Res Function(_ProductModel) _then) = __$ProductModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String sku, PPQtyEnums unit, double price, String title, double quantity, int taxRate, String? description, bool vatInclude, PPProductTypeEnum productType, double discountValue, String? categoryCode, String? categoryName, PPDiscountTypeEnum? discountType, String? exemptionCode
+ int id, String sku, PPQtyEnums unit, double price, String title, double quantity, int taxRate, String? description, bool vatInclude, PPProductTypeEnum productType, double discountValue, String? categoryCode, String? categoryName, PPDiscountTypeEnum? discountType, String? exemptionCode, int otvOrani, int konaklamaOrani
 });
 
 
@@ -929,7 +936,7 @@ class __$ProductModelCopyWithImpl<$Res>
 
 /// Create a copy of ProductModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? sku = null,Object? unit = null,Object? price = null,Object? title = null,Object? quantity = null,Object? taxRate = null,Object? description = freezed,Object? vatInclude = null,Object? productType = null,Object? discountValue = null,Object? categoryCode = freezed,Object? categoryName = freezed,Object? discountType = freezed,Object? exemptionCode = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? sku = null,Object? unit = null,Object? price = null,Object? title = null,Object? quantity = null,Object? taxRate = null,Object? description = freezed,Object? vatInclude = null,Object? productType = null,Object? discountValue = null,Object? categoryCode = freezed,Object? categoryName = freezed,Object? discountType = freezed,Object? exemptionCode = freezed,Object? otvOrani = null,Object? konaklamaOrani = null,}) {
   return _then(_ProductModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,sku: null == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
@@ -946,7 +953,9 @@ as double,categoryCode: freezed == categoryCode ? _self.categoryCode : categoryC
 as String?,categoryName: freezed == categoryName ? _self.categoryName : categoryName // ignore: cast_nullable_to_non_nullable
 as String?,discountType: freezed == discountType ? _self.discountType : discountType // ignore: cast_nullable_to_non_nullable
 as PPDiscountTypeEnum?,exemptionCode: freezed == exemptionCode ? _self.exemptionCode : exemptionCode // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,otvOrani: null == otvOrani ? _self.otvOrani : otvOrani // ignore: cast_nullable_to_non_nullable
+as int,konaklamaOrani: null == konaklamaOrani ? _self.konaklamaOrani : konaklamaOrani // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 

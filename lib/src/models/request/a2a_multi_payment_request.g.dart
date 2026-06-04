@@ -56,6 +56,7 @@ _PPMultiPaymentRequestData _$PPMultiPaymentRequestDataFromJson(
   ),
   discountAmount: (json['discount_amount'] as num).toDouble(),
   changePaymentStatus: json['change_payment_status'] as bool,
+  canTryAgain: json['can_try_again'] as bool? ?? true,
 );
 
 Map<String, dynamic> _$PPMultiPaymentRequestDataToJson(
@@ -79,6 +80,7 @@ Map<String, dynamic> _$PPMultiPaymentRequestDataToJson(
   'delivery_status': _$PPDeliveryStatusEnumEnumMap[instance.deliveryStatus],
   'discount_amount': instance.discountAmount,
   'change_payment_status': instance.changePaymentStatus,
+  'can_try_again': instance.canTryAgain,
 };
 
 const _$PPCurrencyTypeEnumMap = {
@@ -128,6 +130,8 @@ _ProductModel _$ProductModelFromJson(Map<String, dynamic> json) =>
         json['discount_type'],
       ),
       exemptionCode: json['exemption_code'] as String?,
+      otvOrani: (json['otv_orani'] as num?)?.toInt() ?? 0,
+      konaklamaOrani: (json['konaklama_orani'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$ProductModelToJson(_ProductModel instance) =>
@@ -147,6 +151,8 @@ Map<String, dynamic> _$ProductModelToJson(_ProductModel instance) =>
       'category_name': instance.categoryName,
       'discount_type': _$PPDiscountTypeEnumEnumMap[instance.discountType],
       'exemption_code': instance.exemptionCode,
+      'otv_orani': instance.otvOrani,
+      'konaklama_orani': instance.konaklamaOrani,
     };
 
 const _$PPQtyEnumsEnumMap = {

@@ -879,7 +879,7 @@ as int,
 /// @nodoc
 mixin _$PPBillingInfo {
 
- String get name; String get identity; String? get phone; String? get email; String? get address; String? get city; String? get district; String? get taxOffice;
+ String get name; String get identity; String? get phone; String? get email; String? get address; String? get city; String? get district; String? get taxOffice; String? get code;
 /// Create a copy of PPBillingInfo
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -892,16 +892,16 @@ $PPBillingInfoCopyWith<PPBillingInfo> get copyWith => _$PPBillingInfoCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPBillingInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.identity, identity) || other.identity == identity)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.email, email) || other.email == email)&&(identical(other.address, address) || other.address == address)&&(identical(other.city, city) || other.city == city)&&(identical(other.district, district) || other.district == district)&&(identical(other.taxOffice, taxOffice) || other.taxOffice == taxOffice));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PPBillingInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.identity, identity) || other.identity == identity)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.email, email) || other.email == email)&&(identical(other.address, address) || other.address == address)&&(identical(other.city, city) || other.city == city)&&(identical(other.district, district) || other.district == district)&&(identical(other.taxOffice, taxOffice) || other.taxOffice == taxOffice)&&(identical(other.code, code) || other.code == code));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,identity,phone,email,address,city,district,taxOffice);
+int get hashCode => Object.hash(runtimeType,name,identity,phone,email,address,city,district,taxOffice,code);
 
 @override
 String toString() {
-  return 'PPBillingInfo(name: $name, identity: $identity, phone: $phone, email: $email, address: $address, city: $city, district: $district, taxOffice: $taxOffice)';
+  return 'PPBillingInfo(name: $name, identity: $identity, phone: $phone, email: $email, address: $address, city: $city, district: $district, taxOffice: $taxOffice, code: $code)';
 }
 
 
@@ -912,7 +912,7 @@ abstract mixin class $PPBillingInfoCopyWith<$Res>  {
   factory $PPBillingInfoCopyWith(PPBillingInfo value, $Res Function(PPBillingInfo) _then) = _$PPBillingInfoCopyWithImpl;
 @useResult
 $Res call({
- String name, String identity, String? phone, String? email, String? address, String? city, String? district, String? taxOffice
+ String name, String identity, String? phone, String? email, String? address, String? city, String? district, String? taxOffice, String? code
 });
 
 
@@ -929,7 +929,7 @@ class _$PPBillingInfoCopyWithImpl<$Res>
 
 /// Create a copy of PPBillingInfo
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? identity = null,Object? phone = freezed,Object? email = freezed,Object? address = freezed,Object? city = freezed,Object? district = freezed,Object? taxOffice = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? identity = null,Object? phone = freezed,Object? email = freezed,Object? address = freezed,Object? city = freezed,Object? district = freezed,Object? taxOffice = freezed,Object? code = freezed,}) {
   return _then(_self.copyWith(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,identity: null == identity ? _self.identity : identity // ignore: cast_nullable_to_non_nullable
@@ -939,6 +939,7 @@ as String?,address: freezed == address ? _self.address : address // ignore: cast
 as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
 as String?,district: freezed == district ? _self.district : district // ignore: cast_nullable_to_non_nullable
 as String?,taxOffice: freezed == taxOffice ? _self.taxOffice : taxOffice // ignore: cast_nullable_to_non_nullable
+as String?,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -1021,10 +1022,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  String identity,  String? phone,  String? email,  String? address,  String? city,  String? district,  String? taxOffice)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  String identity,  String? phone,  String? email,  String? address,  String? city,  String? district,  String? taxOffice,  String? code)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PPBillingInfo() when $default != null:
-return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,_that.city,_that.district,_that.taxOffice);case _:
+return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,_that.city,_that.district,_that.taxOffice,_that.code);case _:
   return orElse();
 
 }
@@ -1042,10 +1043,10 @@ return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  String identity,  String? phone,  String? email,  String? address,  String? city,  String? district,  String? taxOffice)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  String identity,  String? phone,  String? email,  String? address,  String? city,  String? district,  String? taxOffice,  String? code)  $default,) {final _that = this;
 switch (_that) {
 case _PPBillingInfo():
-return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,_that.city,_that.district,_that.taxOffice);}
+return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,_that.city,_that.district,_that.taxOffice,_that.code);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -1059,10 +1060,10 @@ return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  String identity,  String? phone,  String? email,  String? address,  String? city,  String? district,  String? taxOffice)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  String identity,  String? phone,  String? email,  String? address,  String? city,  String? district,  String? taxOffice,  String? code)?  $default,) {final _that = this;
 switch (_that) {
 case _PPBillingInfo() when $default != null:
-return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,_that.city,_that.district,_that.taxOffice);case _:
+return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,_that.city,_that.district,_that.taxOffice,_that.code);case _:
   return null;
 
 }
@@ -1074,7 +1075,7 @@ return $default(_that.name,_that.identity,_that.phone,_that.email,_that.address,
 @JsonSerializable()
 
 class _PPBillingInfo implements PPBillingInfo {
-  const _PPBillingInfo({required this.name, required this.identity, this.phone, this.email, this.address, this.city, this.district, this.taxOffice});
+  const _PPBillingInfo({required this.name, required this.identity, this.phone, this.email, this.address, this.city, this.district, this.taxOffice, this.code});
   factory _PPBillingInfo.fromJson(Map<String, dynamic> json) => _$PPBillingInfoFromJson(json);
 
 @override final  String name;
@@ -1085,6 +1086,7 @@ class _PPBillingInfo implements PPBillingInfo {
 @override final  String? city;
 @override final  String? district;
 @override final  String? taxOffice;
+@override final  String? code;
 
 /// Create a copy of PPBillingInfo
 /// with the given fields replaced by the non-null parameter values.
@@ -1099,16 +1101,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPBillingInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.identity, identity) || other.identity == identity)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.email, email) || other.email == email)&&(identical(other.address, address) || other.address == address)&&(identical(other.city, city) || other.city == city)&&(identical(other.district, district) || other.district == district)&&(identical(other.taxOffice, taxOffice) || other.taxOffice == taxOffice));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PPBillingInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.identity, identity) || other.identity == identity)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.email, email) || other.email == email)&&(identical(other.address, address) || other.address == address)&&(identical(other.city, city) || other.city == city)&&(identical(other.district, district) || other.district == district)&&(identical(other.taxOffice, taxOffice) || other.taxOffice == taxOffice)&&(identical(other.code, code) || other.code == code));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,identity,phone,email,address,city,district,taxOffice);
+int get hashCode => Object.hash(runtimeType,name,identity,phone,email,address,city,district,taxOffice,code);
 
 @override
 String toString() {
-  return 'PPBillingInfo(name: $name, identity: $identity, phone: $phone, email: $email, address: $address, city: $city, district: $district, taxOffice: $taxOffice)';
+  return 'PPBillingInfo(name: $name, identity: $identity, phone: $phone, email: $email, address: $address, city: $city, district: $district, taxOffice: $taxOffice, code: $code)';
 }
 
 
@@ -1119,7 +1121,7 @@ abstract mixin class _$PPBillingInfoCopyWith<$Res> implements $PPBillingInfoCopy
   factory _$PPBillingInfoCopyWith(_PPBillingInfo value, $Res Function(_PPBillingInfo) _then) = __$PPBillingInfoCopyWithImpl;
 @override @useResult
 $Res call({
- String name, String identity, String? phone, String? email, String? address, String? city, String? district, String? taxOffice
+ String name, String identity, String? phone, String? email, String? address, String? city, String? district, String? taxOffice, String? code
 });
 
 
@@ -1136,7 +1138,7 @@ class __$PPBillingInfoCopyWithImpl<$Res>
 
 /// Create a copy of PPBillingInfo
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? identity = null,Object? phone = freezed,Object? email = freezed,Object? address = freezed,Object? city = freezed,Object? district = freezed,Object? taxOffice = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? identity = null,Object? phone = freezed,Object? email = freezed,Object? address = freezed,Object? city = freezed,Object? district = freezed,Object? taxOffice = freezed,Object? code = freezed,}) {
   return _then(_PPBillingInfo(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,identity: null == identity ? _self.identity : identity // ignore: cast_nullable_to_non_nullable
@@ -1146,6 +1148,7 @@ as String?,address: freezed == address ? _self.address : address // ignore: cast
 as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
 as String?,district: freezed == district ? _self.district : district // ignore: cast_nullable_to_non_nullable
 as String?,taxOffice: freezed == taxOffice ? _self.taxOffice : taxOffice // ignore: cast_nullable_to_non_nullable
+as String?,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

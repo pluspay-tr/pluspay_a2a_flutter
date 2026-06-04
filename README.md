@@ -159,7 +159,6 @@ PPParameterRequestModel.toRequest(
 
 ```dart
 PPMultiPaymentRequest.toRequest(
-  clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
   orderDate: DateTime.now(),
   changePaymentStatus: true,
@@ -175,6 +174,8 @@ PPMultiPaymentRequest.toRequest(
       vatInclude: true,
       productType: PPProductTypeEnum.PHYSICALLY,
       discountValue: 0,
+      otvOrani: 0,             // opsiyonel, varsayılan: 0
+      konaklamaOrani: 0,       // opsiyonel, varsayılan: 0
     ),
   ],
   transactions: [
@@ -191,6 +192,7 @@ PPMultiPaymentRequest.toRequest(
   installment: null,                       // opsiyonel
   groupCode: null,                         // opsiyonel
   note: null,                              // opsiyonel
+  canTryAgain: true,                       // opsiyonel, varsayılan: true
 );
 ```
 
