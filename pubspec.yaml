@@ -1,7 +1,8 @@
 name: pluspay_a2a
-description: "A new Flutter plugin project."
+description: "PlusPay A2A (app-to-app) payment plugin for Android POS devices — start payments, EOD, refunds and transaction queries."
 version: 0.5.0
-homepage:
+homepage: https://github.com/plus-pay-tr/pluspay_a2a
+repository: https://github.com/plus-pay-tr/pluspay_a2a
 
 environment:
   sdk: ^3.9.2
