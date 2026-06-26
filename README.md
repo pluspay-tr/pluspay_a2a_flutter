@@ -4,27 +4,22 @@
 
 > **Not:** Bu paket yalnızca Android platformunu desteklemektedir. iOS desteği bulunmamaktadır.
 
-> **Yakında:** Bu paket [pub.dev](https://pub.dev) üzerinde yayınlanacaktır. O zamana kadar aşağıdaki Git bağımlılığı yöntemini kullanabilirsiniz.
-
 ## Kurulum
 
-`pubspec.yaml` dosyanıza Git referansı olarak ekleyin:
+Aşağıdaki komutu çalıştırın:
+
+```bash
+flutter pub add pluspay_a2a
+```
+
+Veya `pubspec.yaml` dosyanıza elle ekleyip `flutter pub get` çalıştırın:
 
 ```yaml
 dependencies:
-  pluspay_a2a:
-    git:
-      url: https://github.com/plus-pay-tr/pluspay_a2a.git
-      ref: 0.3.1
+  pluspay_a2a: ^0.5.0
 ```
 
-> **Not:** `ref` değeri olarak her zaman kullanmak istediğiniz versiyonun tag'ini belirtin (örn. `0.1.0`, `0.2.0`). Mevcut versiyonları görmek için [tags](https://github.com/plus-pay-tr/pluspay_a2a/tags) sayfasını ziyaret edin. Her zaman son versiyonu kullanmanızı öneririz.
-
-Ardından çalıştırın:
-
-```bash
-flutter pub get
-```
+> **Not:** Mevcut versiyonları [pub.dev/packages/pluspay_a2a](https://pub.dev/packages/pluspay_a2a) sayfasından görebilirsiniz.
 
 ## Hızlı Başlangıç
 

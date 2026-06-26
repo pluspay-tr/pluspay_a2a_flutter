@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2026-06-26
+
+### Changed
+
+- **Dokümantasyon**: Paket pub.dev üzerinde yayınlandı. README kurulum talimatları Git bağımlılığı yerine `flutter pub add pluspay_a2a` / `pluspay_a2a: ^0.5.1` standart pub.dev kurulumuna güncellendi. `pubspec.yaml` içine `description`, `homepage` ve `repository` alanları, kök dizine MIT `LICENSE` eklendi.
+
 ## [0.5.0] - 2026-06-04
 
 ### Fixed
