@@ -238,6 +238,14 @@ class PPA2AClient {
     return PPParametersResponseModel.fromJson(response);
   }
 
+  /// Query the payment types and methods currently available on POS+.
+  Future<PPAvailablePaymentMethodsResponseModel> getAvailablePaymentMethods(
+    PPAvailablePaymentMethodsRequestModel request,
+  ) async {
+    final response = await _sendRequest(request.toJson());
+    return PPAvailablePaymentMethodsResponseModel.fromJson(response);
+  }
+
   /// Stop listening and clean up resources.
   Future<void> dispose() async {
     _pendingCompleter = null;

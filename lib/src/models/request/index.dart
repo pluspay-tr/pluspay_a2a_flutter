@@ -1,3 +1,4 @@
+export 'a2a_available_payment_methods_request.dart';
 export 'a2a_cancel_payment_request.dart';
 export 'a2a_eft_cancel_request.dart';
 export 'a2a_eft_payment_request.dart';

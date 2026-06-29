@@ -9,6 +9,7 @@ enum PPTransactionType {
   EOD,
   PARAMETERS,
   ORDER_MULTI_PAYMENT,
+  AVAILABLE_PAYMENT_METHODS,
 }
 
 enum PPPaymentType {

@@ -16,7 +16,7 @@ Veya `pubspec.yaml` dosyanıza elle ekleyip `flutter pub get` çalıştırın:
 
 ```yaml
 dependencies:
-  pluspay_a2a: ^0.5.0
+  pluspay_a2a: ^0.6.0
 ```
 
 > **Not:** Mevcut versiyonları [pub.dev/packages/pluspay_a2a](https://pub.dev/packages/pluspay_a2a) sayfasından görebilirsiniz.
@@ -64,6 +64,7 @@ Tüm metodlar `PPA2AClient` sınıfı üzerindedir. Her metod başarılı durumd
 | `startMultiPayment` | `PPMultiPaymentRequest` | `PPMultiPaymentResponseModel` | Çoklu ödeme başlat |
 | `triggerEod` | `PPEodRequestModel` | `PPEodResponseModel` | Gün sonu tetikle |
 | `triggerParameters` | `PPParameterRequestModel` | `PPParametersResponseModel` | Parametre güncellemesi tetikle |
+| `getAvailablePaymentMethods` | `PPAvailablePaymentMethodsRequestModel` | `PPAvailablePaymentMethodsResponseModel` | Aktif/kullanılabilir ödeme yöntemlerini sorgula |
 
 ## İstek Modelleri
 
@@ -148,6 +149,14 @@ PPParameterRequestModel.toRequest(
   isAll: true,
   types: null,
 );
+```
+
+### Mevcut Ödeme Yöntemleri
+
+POS+ üzerinde o an aktif/kullanılabilir ödeme tiplerini ve yöntemlerini sorgular. Ekstra parametre gerektirmez.
+
+```dart
+PPAvailablePaymentMethodsRequestModel.toRequest();
 ```
 
 ### Çoklu Ödeme (Multi Payment)
@@ -248,6 +257,31 @@ Her `PPEodResponseItem`; `eodType` (`PPEodType`), `success` (`bool`) ve opsiyone
 | `results` | `List<PPParameterResultModel>` | Parametre güncelleme sonuçları |
 
 Her `PPParameterResultModel`; `type` (`PPParameterTypes`), `completed` (`bool`) ve opsiyonel `errorMessage` alanlarını içerir.
+
+### PPAvailablePaymentMethodsResponseModel
+
+`getAvailablePaymentMethods` metodu tarafından döndürülür. Liste, oturumun profil/cihaz filtrelerinden geçmiş hâliyle döner — yani "şu an gerçekten yapılabilecek" ödeme yöntemleridir.
+
+| Alan | Tip | Açıklama |
+|------|-----|----------|
+| `paymentTypes` | `List<PPPaymentTypeMethodsModel>` | Aktif ödeme tipleri |
+
+Her `PPPaymentTypeMethodsModel`:
+
+| Alan | Tip | Açıklama |
+|------|-----|----------|
+| `code` | `PPPaymentType` | Ödeme tipi |
+| `methods` | `List<PPPaymentMethod>` | O tip için kullanılabilir yöntemler |
+| `title` | `String?` | Görünen ad (opsiyonel) |
+
+```dart
+final res = await pluspay.getAvailablePaymentMethods(
+  PPAvailablePaymentMethodsRequestModel.toRequest(),
+);
+for (final type in res.paymentTypes) {
+  print('${type.code} -> ${type.methods}');
+}
+```
 
 ### PPMultiPaymentResponseModel
 

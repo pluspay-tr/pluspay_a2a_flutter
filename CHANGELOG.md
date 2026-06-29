@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-06-29
+
+### Added
+
+- **Mevcut ödeme yöntemleri sorgusu (`AVAILABLE_PAYMENT_METHODS`)**: POS+ üzerinde o an aktif/kullanılabilir ödeme tiplerini ve yöntemlerini öğrenmek için yeni `getAvailablePaymentMethods` metodu eklendi. Liste, oturumun profil ve cihaz filtrelerinden geçmiş hâliyle döner (örn. nakit yetkisi yoksa `CASH` listede olmaz; fiziksel POS'ta Multinet/Metropol için `SWIPE` eklenir).
+- **`PPAvailablePaymentMethodsRequestModel`**: Yalnızca header içeren, `data` gerektirmeyen yeni istek modeli (`toRequest()`).
+- **`PPAvailablePaymentMethodsResponseModel`**: `paymentTypes` listesini taşıyan yeni yanıt modeli. Her öğe `PPPaymentTypeMethodsModel` olup `code` (`PPPaymentType`), `methods` (`List<PPPaymentMethod>`) ve opsiyonel `title` alanlarını içerir.
+- **`PPTransactionType`**: Yeni `AVAILABLE_PAYMENT_METHODS` değeri eklendi.
+
+### Notes
+
+- Yanıttaki `code` ve `methods` alanları mevcut `PPPaymentType` / `PPPaymentMethod` enum'larıyla eşleşir.
+- Değişiklik geriye dönük uyumludur (breaking değil).
+
 ## [0.5.1] - 2026-06-26
 
 ### Changed
